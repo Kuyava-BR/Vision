@@ -57,6 +57,10 @@ export class AnalysisService {
     const macdValues = MACD.calculate(macdInput);
     const lastMACD = macdValues[macdValues.length - 1];
 
+    if (!lastMACD) {
+      return { value: 0, signal: 0, histogram: 0 };
+    }
+
     return {
       value: lastMACD.MACD,
       signal: lastMACD.signal,
@@ -75,6 +79,10 @@ export class AnalysisService {
 
     const bbands = BollingerBands.calculate(bbandsInput);
     const lastBBand = bbands[bbands.length - 1];
+
+    if (!lastBBand) {
+      return { upper: 0, middle: 0, lower: 0 };
+    }
 
     return {
       upper: lastBBand.upper,
