@@ -62,9 +62,9 @@ export class AnalysisService {
     }
 
     return {
-      value: lastMACD.MACD,
-      signal: lastMACD.signal,
-      histogram: lastMACD.histogram
+      value: lastMACD.MACD ?? 0,
+      signal: lastMACD.signal ?? 0,
+      histogram: lastMACD.histogram ?? 0
     };
   }
 
@@ -85,9 +85,9 @@ export class AnalysisService {
     }
 
     return {
-      upper: lastBBand.upper,
-      middle: lastBBand.middle,
-      lower: lastBBand.lower
+      upper: lastBBand.upper ?? 0,
+      middle: lastBBand.middle ?? 0,
+      lower: lastBBand.lower ?? 0
     };
   }
 
