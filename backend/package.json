@@ -12,7 +12,9 @@
     "migration:generate": "npx typeorm-ts-node-commonjs -d src/config/database.ts migration:generate",
     "migration:revert": "npx typeorm-ts-node-commonjs -d src/config/database.ts migration:revert",
     "reset-db": "ts-node src/scripts/resetDatabase.ts",
-    "seed:admin": "ts-node src/scripts/seedAdmin.ts"
+    "seed:admin": "ts-node src/scripts/seedAdmin.ts",
+    "migration:run:prod": "npx typeorm migration:run -d dist/config/database.js",
+    "start:prod": "npm run migration:run:prod && npm start"
   },
   "keywords": [],
   "author": "",
